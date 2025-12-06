@@ -1,51 +1,23 @@
 ---
-const { text } = Astro.props;
-const id = Math.random().toString(36).slice(2, -1);
+import { cn } from "../utils/utils";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"h1"> {
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  size?: "default" | "large";
+}
+
+const { as = "h1", size = "default", class: className, ...attrs } = Astro.props;
 ---
 
-<h1 data-value="{text}" class="{id}">{text}</h1>
-
-<script is:inline>
-const extraChars = "x;&$@";
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + extraChars;
-
-const effect = (el, letterChangePerSecond = 4) => {
-  let i = 0;
-  const interval = setInterval(() => {
-    el.target.innerText = el.target.innerText
-      .split("")
-      .map((l, idx) => {
-        if (idx < i) {
-          return el.target.dataset.value[idx];
-        }
-
-        return letters[Math.floor(Math.random() * 26)];
-      }) 
-      .join("");
-
-    if (i >= el.target.dataset.value.length) {
-            clearInterval(interval)
-        }
-        i += 1 / letterChangePerSecond
-  }, 30);
-};
-
-const h1 = document.querySelector(".{id}")
-document.addEventListener("DOMContentLoaded", () => {
-  effect({ target: h1 }, 8);
-});
-h1.addEventListener("mouseover", (e) => effect(e))
-
-</script>
-
-<style>
-    body {
-        background: black;
-    }
-
-    h1 {
-        color: white;
-        font-size: 5rem;
-        font-family: "Space Mono", monospace 
-    }
-</style>
+<as
+  class={cn(
+    "text-balance font-bold text-white",
+    size === "default" && "text-4xl tracking-tight md:text-6xl xl:text-8xl",
+    size === "large" &&
+      "letter-spacin text-8xl tracking-tighter md:text-[7.5rem] 2xl:text-[10rem]",
+    className,
+  )}
+  {...attrs}
+>
+</as>

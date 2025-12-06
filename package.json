@@ -1,18 +1,23 @@
 {
-	"name": "web-himpunan-himbidig",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"astro": "^5.16.4"
-	},
-	"devDependencies": {
-		"prettier": "3.7.4",
-		"prettier-plugin-astro": "0.14.1"
-	}
+  "name": "web-himpunan-himbidig",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier . -w",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.16.4",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "prettier": "3.7.4",
+    "prettier-plugin-astro": "0.14.1"
+  }
 }

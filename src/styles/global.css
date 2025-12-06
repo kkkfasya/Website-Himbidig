@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #258fbf;
+  --secondary-color: ##69ba53;
+  --highlight-color: #87ceee;
+  --text-color: #f4f2f3;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist);
+}
