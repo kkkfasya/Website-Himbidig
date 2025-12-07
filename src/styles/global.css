@@ -7,6 +7,9 @@
   --text-color: #f4f2f3;
 }
 
+@theme {
+}
+
 @theme inline {
   --font-sans: var(--font-geist);
 }

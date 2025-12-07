@@ -7,17 +7,23 @@ interface Props extends HTMLAttributes<"h1"> {
   size?: "default" | "large";
 }
 
-const { as = "h1", size = "default", class: className, ...attrs } = Astro.props;
+const {
+  as: Tag = "h1",
+  size = "default",
+  class: className,
+  ...attrs
+} = Astro.props;
 ---
 
-<as
+<Tag
   class={cn(
     "text-balance font-bold text-white",
     size === "default" && "text-4xl tracking-tight md:text-6xl xl:text-8xl",
     size === "large" &&
-      "letter-spacin text-8xl tracking-tighter md:text-[7.5rem] 2xl:text-[10rem]",
+      "text-8xl tracking-tighter md:text-[7.5rem] 2xl:text-[10rem]",
     className,
   )}
   {...attrs}
 >
-</as>
+  <slot />
+</Tag>

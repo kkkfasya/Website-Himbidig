@@ -1,0 +1,85 @@
+---
+/* WARNING: dont use as of now since this does not work
+* so basically the idea is that the text appear as one in the middle of the screen, and when you scroll it it sticks to the top left 
+* it turns to a nav header kinda stuffs
+* */
+
+import Header from "./Header.astro";
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "../utils/utils";
+
+type TwTextSize = "text-sm" | "text-xs" | "text-base";
+
+interface Props extends HTMLAttributes<"h1"> {
+  initialTextSize?: string;
+  finalTextSize?: string;
+}
+
+const {
+  initialTextSize = "text-8xl",
+  finalTextSize = "text-xl",
+  class: className,
+  ...attrs
+} = Astro.props;
+---
+
+<Header
+  class={cn(
+    "flex h-screen w-screen items-center justify-center text-white",
+    className,
+    initialTextSize,
+        finalTextSize,
+  )}
+  data-sticky-element
+        data-initial-text-size={initialTextSize}
+        data-final-text-size={finalTextSize}
+        {...attrs}
+>
+  <script>
+    class DynamicHeader extends HTMLElement {
+      connectedCallback() {
+        const el = this.querySelector("[data-sticky-element]");
+          const initalTextSize = this.data.initial_text_size 
+          const finalTextSize = this.data.final_text_size 
+        if (el) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (!e.isIntersecting) {
+                  el.classList.remove(
+                    "items-center",
+                    "justify-center",
+                    `{initialTextSize}`,
+                  );
+                  el.classList.add(
+                    "items-start",
+                    "justify-start",
+                    `{finalTextSize}`,
+                  );
+                } else {
+                  el.classList.add(
+                    "items-center",
+                    "justify-center",
+                    `{initialTextSize}`,
+                  );
+                  el.classList.remove(
+                    "items-start",
+                    "justify-start",
+                    `{finalTextSize}`,
+                  );
+                }
+              });
+            },
+            {
+              threshold: [0, 1.0],
+              rootMargin: "0px 0px -100px 0px",
+            },
+          );
+          observer.observe(el);
+        }
+      }
+    }
+    customElements.define('dynamic-header', DynamicHeader)
+  </script>
+</Header>
