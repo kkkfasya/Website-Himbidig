@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import { AutoplayCarousel } from "@/components/AutoplayCarousel";
-import {ImageCardCarousel} from "@/components/ImageCardCarousel"
+import { AutoplayImageCarousel } from "@/components/AutoplayImageCarousel";
+import { ImageCardCarousel } from "@/components/ImageCardCarousel";
+import DemoImg from "@/assets/demo.png";
 
 // BUG: font won't load
+const l = Array.from({length: 5}).map(() => DemoImg.src)
 ---
 
 <Layout>
@@ -20,15 +22,22 @@ import {ImageCardCarousel} from "@/components/ImageCardCarousel"
         corporis itaque fugiat veritatis a, odit reprehenderit eveniet minima
         molestiae nostrum!
       </Header>
-      <!-- perhaps add this https://reactbits.dev/components/bounce-cards -->
+      <!--
     </div>
 
     <div class="flex justify-center">
-        <AutoplayCarousel client:load> 
-            <ImageCardCarousel src="">
-        </AutoplayCarousel>
+    <!-- TODO:
+        - make image fit to card
+        - perhaps add this https://reactbits.dev/components/bounce-cards untuk anggota himpunan
+        - fix font not loading
+        - add pic
+        - add transition effect when first page load
+        - add footer
+        - add logo
+    -->
+        <AutoplayImageCarousel client:load imgList={l} />
     </div>
   </main>
-</Layout>
 
-<style></style>
+  <style></style>
+</Layout>
