@@ -1,30 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import { AutoplayCarousel } from "@/components/AutoplayCarousel";
+import {ImageCardCarousel} from "@/components/ImageCardCarousel"
 
 // BUG: font won't load
 ---
 
 <Layout>
-    <main>
-        <div class="flex flex-col">
+  <main>
+    <div class="flex flex-col">
+      <Header class="text-(--text-color)" size="large">Himbidig</Header>
+      <Header
+        as="h3"
+        class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-xl"
+      >
+        Visi Misi: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+        impedit doloribus magnam, vitae enim soluta neque quasi labore earum
+        corporis itaque fugiat veritatis a, odit reprehenderit eveniet minima
+        molestiae nostrum!
+      </Header>
+      <!-- perhaps add this https://reactbits.dev/components/bounce-cards -->
+    </div>
 
-            <Header class="text-(--text-color)" size="large">Himbidig</Header>
-            <Header
-                    as="h3"
-                    class="text-xl text-(--text-color)/90 xl:text-xl mt-5 ml-3 text-justify w-xl"
-                    >
-                    Visi Misi: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                    impedit doloribus magnam, vitae enim soluta neque quasi labore earum
-                    corporis itaque fugiat veritatis a, odit reprehenderit eveniet minima
-                    molestiae nostrum!
-            </Header>
-
-            <!-- perhaps add this https://reactbits.dev/components/bounce-cards -->
-
-        </div>
-
-    </main>
+    <div class="flex justify-center">
+        <AutoplayCarousel client:load> 
+            <ImageCardCarousel src="">
+        </AutoplayCarousel>
+    </div>
+  </main>
 </Layout>
 
 <style></style>

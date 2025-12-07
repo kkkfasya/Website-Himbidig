@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import path from "node:path";
 
 import react from "@astrojs/react";
 
@@ -9,7 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
   experimental: {
     fonts: [
       {

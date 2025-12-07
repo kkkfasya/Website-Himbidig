@@ -1,13 +1,13 @@
 ---
 /* WARNING: dont use as of now since this does not work
-* so basically the idea is that the text appear as one in the middle of the screen, and when you scroll it it sticks to the top left 
-* it turns to a nav header kinda stuffs
-* */
+ * so basically the idea is that the text appear as one in the middle of the screen, and when you scroll it it sticks to the top left
+ * it turns to a nav header kinda stuffs
+ * */
 
 import Header from "./Header.astro";
 import type { HTMLAttributes } from "astro/types";
 
-import { cn } from "../utils/utils";
+import { cn } from "@/lib/utils";
 
 type TwTextSize = "text-sm" | "text-xs" | "text-base";
 
@@ -29,19 +29,19 @@ const {
     "flex h-screen w-screen items-center justify-center text-white",
     className,
     initialTextSize,
-        finalTextSize,
+    finalTextSize,
   )}
   data-sticky-element
-        data-initial-text-size={initialTextSize}
-        data-final-text-size={finalTextSize}
-        {...attrs}
+  data-initial-text-size={initialTextSize}
+  data-final-text-size={finalTextSize}
+  {...attrs}
 >
   <script>
     class DynamicHeader extends HTMLElement {
       connectedCallback() {
         const el = this.querySelector("[data-sticky-element]");
-          const initalTextSize = this.data.initial_text_size 
-          const finalTextSize = this.data.final_text_size 
+        const initalTextSize = this.data.initial_text_size;
+        const finalTextSize = this.data.final_text_size;
         if (el) {
           const observer = new IntersectionObserver(
             (entries) => {
@@ -80,6 +80,6 @@ const {
         }
       }
     }
-    customElements.define('dynamic-header', DynamicHeader)
+    customElements.define("dynamic-header", DynamicHeader);
   </script>
 </Header>
