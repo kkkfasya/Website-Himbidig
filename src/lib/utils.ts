@@ -9,10 +9,8 @@ export function randomClassId() {
   return Math.random().toString(36).slice(2, -1);
 }
 
-export function extractSourcePathRegex(pathString: string): string | null {
-  const regex = /src\/(.+?)(\?|$)/; 
-  
+export function extractSourcePathRegex(pathString: string): string {
+  const regex = /src\/(.+?)(\?|$)/;
   const match = pathString.match(regex);
-
   return match ? match[1] : "";
 }

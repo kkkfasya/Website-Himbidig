@@ -1,12 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro"
 import { AutoplayImageCarousel } from "@/components/AutoplayImageCarousel";
-import DemoImg from "@/assets/demo.png";
 import { extractSourcePathRegex } from "@/lib/utils";
+import DemoImg from "@/assets/demo.png";
 
-// BUG: font won't load
-const images = Array.from({length: 5}).map(() => "../" + extractSourcePathRegex( DemoImg.src))
+import BounceCards from "@/components/BounceCards";
+
+let imgs = Array.from({ length: 5 }).map(() => "/demo.png");
+
+// HACK: try this one more time
+let experimental_imgs = Array.from({ length: 5 }).map(() => "../" + extractSourcePathRegex( DemoImg.src));
+
+const transformStyles = [
+  "rotate(5deg) translate(-150px)",
+  "rotate(0deg) translate(-70px)",
+  "rotate(-5deg)",
+  "rotate(5deg) translate(70px)",
+  "rotate(-5deg) translate(150px)",
+];
 ---
 
 <Layout>
@@ -14,20 +27,59 @@ const images = Array.from({length: 5}).map(() => "../" + extractSourcePathRegex(
     <div class="flex flex-col">
       <Header class="text-(--text-color)" size="large">Himbidig</Header>
       <Header
-        as="h3"
-        class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-xl"
+        as="h4"
+        class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-lg"
       >
-        Visi Misi: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+      slogan simpel
+      </Header>
+    </div>
+    <div class="my-30 flex items-center justify-around">
+      <div class="flex flex-col">
+        <Header class="text-(--text-color)" size="default">Anggota</Header>
+        <Header
+          as="h3"
+          class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-xl"
+        >
+          Anggota: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Quia impedit doloribus magnam, vitae enim soluta neque quasi labore
+          earum corporis itaque fugiat veritatis a, odit reprehenderit eveniet
+          minima molestiae nostrum!
+        </Header>
+      </div>
+      <BounceCards
+        client:load
+        images={imgs}
+        containerWidth={500}
+        containerHeight={250}
+        animationDelay={1}
+        animationStagger={0.08}
+        easeType="elastic.out(1, 0.5)"
+        transformStyles={transformStyles}
+        enableHover={true}
+      />
+    </div>
+
+    <div class="flex justify-center items-center">
+
+       <!-- TODO: mungkin bikin component paragraphs  -->
+      <Header
+        as="h3"
+        class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-2xl"
+      >
+        VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
         impedit doloribus magnam, vitae enim soluta neque quasi labore earum
         corporis itaque fugiat veritatis a, odit reprehenderit eveniet minima
         molestiae nostrum!
       </Header>
-    </div>
-    <div class="flex justify-center items-center my-30">
-        <AutoplayImageCarousel client:load imgList={images} />
+
 
     </div>
+
+    <div class="my-30 flex justify-center items-center flex-col">
+    <Header class="text-(--text-color) my-10" size="default">Kegiatan Himpunan</Header>
+        <AutoplayImageCarousel client:visible imgList={imgs} />
+    </div>
+
+    <Footer />
   </main>
-
-  <style></style>
 </Layout>

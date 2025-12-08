@@ -4,18 +4,21 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+    CarouselNext,
+    CarouselPrevious
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import WheelGesturesPlugin from "embla-carousel-wheel-gestures";
 
 export function AutoplayImageCarousel(props: {
   className?: string;
-    imgList: string[]
+  imgList: string[];
 }) {
   return (
     <Carousel
       opts={{
         align: "start",
+        loop: true
       }}
       plugins={[
         Autoplay({
@@ -23,18 +26,21 @@ export function AutoplayImageCarousel(props: {
         }),
         WheelGesturesPlugin({ forceWheelAxis: "x" }),
       ]}
-      className="w-full max-w-5xl"
+      className={cn("w-full max-w-7xl", props.className)}
     >
       <CarouselContent>
         {props.imgList.map((img, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <Card className="p-0 overflow-hidden">
-                <CardContent className={cn(`aspect-square bg-cover bg-no-repeat bg-center bg-[url(${img})]`)}>
-                </CardContent>
-              </Card>
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+            <Card className="overflow-hidden p-0">
+              <CardContent
+                className={`aspect-square bg-cover bg-center bg-no-repeat bg-[url(${img})]`}
+              ></CardContent>
+            </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
     </Carousel>
   );
 }
