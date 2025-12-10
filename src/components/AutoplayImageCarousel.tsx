@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {
@@ -10,10 +11,13 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import WheelGesturesPlugin from "embla-carousel-wheel-gestures";
 
-export function AutoplayImageCarousel(props: {
+export default function AutoplayImageCarousel(props: {
   className?: string;
   imgList: string[];
 }) {
+    React.useEffect(() => {
+        console.log(props.imgList)
+    }, [])
   return (
     <Carousel
       opts={{
@@ -33,8 +37,10 @@ export function AutoplayImageCarousel(props: {
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
             <Card className="overflow-hidden p-0">
               <CardContent
-                className={`aspect-square bg-cover bg-center bg-no-repeat bg-[url(${img})]`}
-              ></CardContent>
+                className="aspect-square p-0"
+              >
+                                <img src={img} className="w-full h-full object-cover" />
+                            </CardContent>
             </Card>
           </CarouselItem>
         ))}
