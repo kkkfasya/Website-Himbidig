@@ -1,30 +1,48 @@
 ---
-import logo from "@/assets/demo.png"
-const web_url = ""
-const web_creator_url = "https://kkkfasya.web.id" // Masukin web aku di footer gapapa yaa
+import logo from "@/assets/demo.png";
+const web_url = "";
+const web_creator_url = "https://kkkfasya.web.id"; // Masukin web aku di footer gapapa yaa
 ---
 
-<footer class="bg-neutral-primary-soft rounded-base shadow-xs border border-(--text-color) m-4 text-(--text-color) rounded-xl">
-    <div class="w-full max-w-7xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href={web_url} class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src={logo.src} class="h-7" alt="Himbidig Logo" />
-                <span class="text-heading self-center text-2xl font-semibold whitespace-nowrap">Himbidig Unmuha</span>
-            </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-body sm:mb-0 ">
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6" target="_blank">Instagram</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6" target="_blank">Contact</a>
-                </li>
-                <li>
-                    <a href={web_creator_url} class="hover:underline" target="_blank">Website Creator</a>
-                </li>
-            </ul>
-        </div>
-        <hr class="my-6 border-default sm:mx-auto lg:my-8" />
-        <span class="block text-sm text-body sm:text-center">© 2025 <a href={web_creator_url} class="hover:underline">Kamal Fasya</a>. Made with Love.</span>
+<footer
+  class="bg-neutral-primary-soft rounded-base m-4 rounded-xl border border-(--text-color) text-(--text-color) shadow-xs"
+>
+  <div class="mx-auto w-full max-w-7xl p-4 md:py-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <a
+        href={web_url}
+        class="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
+      >
+        <img src={logo.src} class="h-7" alt="Himbidig Logo" />
+        <span
+          class="text-heading self-center text-2xl font-semibold whitespace-nowrap"
+          >Himbidig Unmuha</span
+        >
+      </a>
+      <ul
+        class="text-body mb-6 flex flex-wrap items-center text-sm font-medium sm:mb-0"
+      >
+        <li>
+          <a href="#" class="me-4 hover:underline md:me-6" target="_blank"
+            >Instagram</a
+          >
+        </li>
+        <li>
+          <a href="#" class="me-4 hover:underline md:me-6" target="_blank"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a href={web_creator_url} class="hover:underline" target="_blank"
+            >Website Creator</a
+          >
+        </li>
+      </ul>
     </div>
+    <hr class="border-default my-6 sm:mx-auto lg:my-8" />
+    <span class="text-body block text-sm sm:text-center"
+      >© 2025 <a href={web_creator_url} class="hover:underline">Kamal Fasya</a>.
+      Made with Love.</span
+    >
+  </div>
 </footer>
-

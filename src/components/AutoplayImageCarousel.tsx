@@ -1,12 +1,11 @@
-import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-    CarouselNext,
-    CarouselPrevious
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import WheelGesturesPlugin from "embla-carousel-wheel-gestures";
@@ -15,14 +14,11 @@ export default function AutoplayImageCarousel(props: {
   className?: string;
   imgList: string[];
 }) {
-    React.useEffect(() => {
-        console.log(props.imgList)
-    }, [])
   return (
     <Carousel
       opts={{
         align: "start",
-        loop: true
+        loop: true,
       }}
       plugins={[
         Autoplay({
@@ -30,23 +26,27 @@ export default function AutoplayImageCarousel(props: {
         }),
         WheelGesturesPlugin({ forceWheelAxis: "x" }),
       ]}
-      className={cn("w-full max-w-7xl", props.className)}
+      className={cn(
+        "w-[20rem] md:w-[50rem] xl:w-[70rem] 2xl:w-7xl",
+        props.className,
+      )}
     >
       <CarouselContent>
         {props.imgList.map((img, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+          <CarouselItem
+            key={index}
+            className="basis-1/1 md:basis-1/3 xl:basis-1/4"
+          >
             <Card className="overflow-hidden p-0">
-              <CardContent
-                className="aspect-square p-0"
-              >
-                                <img src={img} className="w-full h-full object-cover" />
-                            </CardContent>
+              <CardContent className="p-0 md:aspect-square">
+                <img src={img} className="h-full w-full object-cover" />
+              </CardContent>
             </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+      <CarouselPrevious />
+      <CarouselNext />
     </Carousel>
   );
 }

@@ -2,14 +2,13 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Paragraph from "@/components/Paragraph.astro";
-import Footer from "@/components/Footer.astro"
-import  AutoplayImageCarousel  from "@/components/AutoplayImageCarousel";
-import { extractSourcePathRegex } from "@/lib/utils";
+import Footer from "@/components/Footer.astro";
+import PresenceOfMotion from "@/components/PresenceOfMotion";
+import AutoplayImageCarousel from "@/components/AutoplayImageCarousel";
 import DemoImg from "@/assets/demo.png";
-
 import BounceCards from "@/components/BounceCards";
 
-let imgs = Array.from({ length: 5 }).map(() => DemoImg.src)
+let imgs = Array.from({ length: 5 }).map(() => DemoImg.src);
 
 const transformStyles = [
   "rotate(5deg) translate(-150px)",
@@ -21,59 +20,57 @@ const transformStyles = [
 ---
 
 <Layout>
-  <main>
-    <div class="flex flex-col">
-      <Header class="text-(--text-color)" size="large">Himbidig</Header>
-      <Header
-        as="h4"
-        class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-lg"
-      >
-      slogan simpel
-      </Header>
-    </div>
-    <div class="my-30 flex items-center justify-around">
-      <div class="flex flex-col">
-        <Header class="text-(--text-color)" size="default">Anggota</Header>
-        <Header
-          as="h3"
-          class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-xl"
-        >
-          Anggota: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  <PresenceOfMotion client:load>
+    <main>
+      <div class="mx-10 my-10 flex w-full flex-col justify-center">
+        <Header class="text-(--text-color)" size="large">Himbidig</Header>
+        <!-- TODO: align paragraph with header -->
+        <Paragraph class="w-xl text-(--text-color)/90">
+          slogan simpel
+        </Paragraph>
+      </div>
+      <!-- TODO: fix mobile css where it overflow to the right -->
+      <div class="my-30 flex flex-col items-center justify-around xl:flex-row">
+        <div class="flex flex-col">
+          <Header class="text-(--text-color)" size="default">Anggota</Header>
+          <Paragraph class="my-5 w-xl text-justify text-(--text-color)/90">
+            Anggota: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quia impedit doloribus magnam, vitae enim soluta neque quasi labore
+            earum corporis itaque fugiat veritatis a, odit reprehenderit eveniet
+            minima molestiae nostrum!
+          </Paragraph>
+        </div>
+        <BounceCards
+          client:load
+          images={imgs}
+          containerWidth={500}
+          containerHeight={250}
+          animationDelay={1}
+          animationStagger={0.08}
+          easeType="elastic.out(1, 0.5)"
+          transformStyles={transformStyles}
+          enableHover={true}
+        />
+      </div>
+
+      <div class="flex items-center justify-center">
+        <Paragraph class="my-5 w-xl text-justify text-(--text-color)/90">
+          VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Quia impedit doloribus magnam, vitae enim soluta neque quasi labore
           earum corporis itaque fugiat veritatis a, odit reprehenderit eveniet
           minima molestiae nostrum!
-        </Header>
+        </Paragraph>
       </div>
-      <BounceCards
-        client:load
-        images={imgs}
-        containerWidth={500}
-        containerHeight={250}
-        animationDelay={1}
-        animationStagger={0.08}
-        easeType="elastic.out(1, 0.5)"
-        transformStyles={transformStyles}
-        enableHover={true}
-      />
-    </div>
 
-    <div class="flex justify-center items-center">
+      <div class="my-30 flex flex-col items-center justify-center">
+        <Header class="my-10 text-(--text-color)" size="default"
+          >Kegiatan Himpunan</Header
+        >
+        <AutoplayImageCarousel client:visible imgList={imgs} className="w-xl" />
+      </div>
 
-      <Paragraph
-        class="my-5 w-xl text-justify text-(--text-color)/90" 
-      >
-        VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-        impedit doloribus magnam, vitae enim soluta neque quasi labore earum
-        corporis itaque fugiat veritatis a, odit reprehenderit eveniet minima
-        molestiae nostrum!
-      </Paragraph>
-    </div>
-
-    <div class="my-30 flex justify-center items-center flex-col">
-    <Header class="text-(--text-color) my-10" size="default">Kegiatan Himpunan</Header>
-        <AutoplayImageCarousel client:visible imgList={imgs} />
-    </div>
-
-    <Footer />
-  </main>
+      <Footer />
+    </main>
+    <PresenceOfMotion />
+  </PresenceOfMotion>
 </Layout>
