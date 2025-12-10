@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
+import Paragraph from "@/components/Paragraph.astro";
 import Footer from "@/components/Footer.astro"
 import { AutoplayImageCarousel } from "@/components/AutoplayImageCarousel";
 import { extractSourcePathRegex } from "@/lib/utils";
@@ -9,6 +10,7 @@ import DemoImg from "@/assets/demo.png";
 import BounceCards from "@/components/BounceCards";
 
 let imgs = Array.from({ length: 5 }).map(() => "/demo.png");
+let ximgs = Array.from({ length: 5 }).map(() => "../assets/demo.png");
 
 // HACK: try this one more time
 let experimental_imgs = Array.from({ length: 5 }).map(() => "../" + extractSourcePathRegex( DemoImg.src));
@@ -61,23 +63,19 @@ const transformStyles = [
 
     <div class="flex justify-center items-center">
 
-       <!-- TODO: mungkin bikin component paragraphs  -->
-      <Header
-        as="h3"
-        class="mt-5 ml-3 w-xl text-justify text-xl text-(--text-color)/90 xl:text-2xl"
+      <Paragraph
+        class="my-5 w-xl text-justify text-(--text-color)/90" 
       >
         VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
         impedit doloribus magnam, vitae enim soluta neque quasi labore earum
         corporis itaque fugiat veritatis a, odit reprehenderit eveniet minima
         molestiae nostrum!
-      </Header>
-
-
+      </Paragraph>
     </div>
 
     <div class="my-30 flex justify-center items-center flex-col">
     <Header class="text-(--text-color) my-10" size="default">Kegiatan Himpunan</Header>
-        <AutoplayImageCarousel client:visible imgList={imgs} />
+        <AutoplayImageCarousel client:visible imgList={ximgs} />
     </div>
 
     <Footer />
