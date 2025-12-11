@@ -10,6 +10,9 @@ importers:
       "@astrojs/react":
         specifier: ^4.4.2
         version: 4.4.2(@types/node@24.10.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      "@paper-design/shaders-react":
+        specifier: ^0.0.68
+        version: 0.0.68(@types/react@19.2.7)(react@19.2.1)
       "@radix-ui/react-slot":
         specifier: ^1.2.4
         version: 1.2.4(@types/react@19.2.7)(react@19.2.1)
@@ -754,6 +757,24 @@ packages:
     resolution:
       {
         integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==,
+      }
+
+  "@paper-design/shaders-react@0.0.68":
+    resolution:
+      {
+        integrity: sha512-RaL/OCfaPVyVcPHJnemRuobfgseq1Pb5d4ktjclCmKprUe5Ac5WsexFuJBHpIfrMdYC/bV2ADJj24+dnthTpig==,
+      }
+    peerDependencies:
+      "@types/react": ^18 || ^19
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      "@types/react":
+        optional: true
+
+  "@paper-design/shaders@0.0.68":
+    resolution:
+      {
+        integrity: sha512-HWDb/mYfIDcwRGYjwTFEoupw4PgdmuoNONJ6TIXBaXWj3zdhS38iNehbAWQxWa1NHtOanOeQkbdG0wvaNKhvEw==,
       }
 
   "@radix-ui/react-compose-refs@1.1.2":
@@ -3881,6 +3902,15 @@ snapshots:
       "@jridgewell/sourcemap-codec": 1.5.5
 
   "@oslojs/encoding@1.1.0": {}
+
+  "@paper-design/shaders-react@0.0.68(@types/react@19.2.7)(react@19.2.1)":
+    dependencies:
+      "@paper-design/shaders": 0.0.68
+      react: 19.2.1
+    optionalDependencies:
+      "@types/react": 19.2.7
+
+  "@paper-design/shaders@0.0.68": {}
 
   "@radix-ui/react-compose-refs@1.1.2(@types/react@19.2.7)(react@19.2.1)":
     dependencies:

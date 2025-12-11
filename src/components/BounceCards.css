@@ -18,6 +18,34 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* xl */
+@media (min-width: 1280px) {
+    .card {
+        width: 300px;
+    }
+}
+
+/* lg */
+@media (min-width: 1024) {
+    .card {
+        width: 200px;
+    }
+}
+
+/* md */
+@media (min-width: 768) {
+    .card {
+        width: 300px;
+    }
+}
+
+/* sm */
+@media (min-width: 640) {
+    .card {
+        width: 300px;
+    }
+}
+
 .card .image {
   width: 100%;
   height: 100%;
