@@ -11,8 +11,8 @@ const { size = "default", class: className, ...attrs } = Astro.props;
 
 <p
   class={cn(
-    "text-balance font-bold text-white",
-    size === "default" && "text-base tracking-tight md:text-lg xl:text-2x",
+    "text-balance font-bold text-white w-md md:w-xl",
+    size === "default" && "text-base tracking-tight md:text-lg xl:text-2xl",
     size === "large" && "text-lg tracking-tighter md:text-xl xl:text-2xl",
     className,
   )}
