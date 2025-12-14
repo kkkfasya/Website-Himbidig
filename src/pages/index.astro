@@ -1,6 +1,4 @@
 ---
-// TODO: fix mobile css where it overflow to the right
-// TODO: align paragraph with header
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Paragraph from "@/components/Paragraph.astro";
@@ -19,91 +17,102 @@ const transformStyles = [
   "rotate(5deg) translate(70px)",
   "rotate(-5deg) translate(150px)",
 ];
+
+// TODO: favicon
+// TODO: font
+// TODO: color
 ---
 
 <Layout>
-  <main>
-    <div
-      class="group relative flex w-full items-center justify-center"
-    >
-      <div class="absolute -z-10 h-full w-full blur-[2px]">
-        <Dithering
-          client:load
-          width="100%"
-          height="100%"
-          colorBack="#301c2a"
-          colorFront="#258fc1"
-          shape="warp"
-          type="4x4"
-          size={2.5}
-          speed={1}
-        />
-      </div>
-
+  <PresenceOfMotion client:load>
+    <main class="overflow-x-hidden">
       <div
-        class="relative z-10 flex w-full flex-col justify-between p-4 sm:p-8"
+        class="relative flex w-full items-center justify-center px-4 sm:px-8"
       >
-        <!-- Header -->
-        <div class="flex w-full flex-col px-4 md:w-1/2 xl:w-2/5">
-          <!-- <div class="mx-10 my-10 flex w-md flex-col justify-center md:w-xl"> -->
-          <Header class="text-(--text-color)" size="large">Himbidig</Header>
-          <Paragraph class="text-(--text-color)/90">slogan simpel </Paragraph>
+        <div class="absolute top-0 left-0 -z-10 h-full w-full blur-[2px]">
+          <Dithering
+            client:load
+            width="100%"
+            height="100%"
+            colorBack="#301c2a"
+            colorFront="#258fc1"
+            shape="warp"
+            type="4x4"
+            size={2.5}
+            speed={1}
+          />
         </div>
 
-        <!-- Content -->
         <div
-          class="my-30 flex flex-col items-center justify-around xl:flex-row"
+          class="relative z-10 flex w-full flex-col justify-between gap-y-50 md:gap-y-60"
         >
-          <div class="flex flex-col">
-            <Header class="text-(--text-color)" size="default">Anggota</Header>
-            <Paragraph class="my-5 text-justify text-(--text-color)/90">
-              Anggota: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Quia impedit doloribus magnam, vitae enim soluta neque quasi
+          <!-- Header -->
+          <div class="flex w-full flex-col md:w-1/2 xl:w-2/5">
+            <Header class="text-7xl text-(--text-color)" size="large"
+              >Himbidig</Header
+            >
+            <Paragraph class="text-(--text-color)">slogan simpel </Paragraph>
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col items-center justify-around xl:flex-row">
+            <div class="flex flex-col">
+              <Header class="text-(--text-color)" size="default">Anggota</Header
+              >
+              <Paragraph
+                class="my-5 w-sm max-w-xl text-justify text-(--text-color) md:w-xl"
+              >
+                Anggota: Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Quia impedit doloribus magnam, vitae enim soluta neque
+                quasi labore earum corporis itaque fugiat veritatis a, odit
+                reprehenderit eveniet minima molestiae nostrum!
+              </Paragraph>
+            </div>
+                        <div class="mt-10 sm:mt-0">
+<BounceCards
+              client:load
+              images={imgs}
+              containerWidth={500}
+              containerHeight={250}
+              animationDelay={1}
+              animationStagger={0.08}
+              easeType="elastic.out(1, 0.5)"
+              transformStyles={transformStyles}
+              enableHover={true}
+            />
+                        </div>
+            
+          </div>
+
+          <!-- Content 2 -->
+          <div class="flex items-center justify-center">
+            <Paragraph
+              class=" w-md max-w-xl text-justify text-(--text-color) md:w-xl"
+            >
+              VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Quia impedit doloribus magnam, vitae enim soluta neque quasi
               labore earum corporis itaque fugiat veritatis a, odit
               reprehenderit eveniet minima molestiae nostrum!
             </Paragraph>
           </div>
-          <BounceCards
-            client:load
-            images={imgs}
-            containerWidth={500}
-            containerHeight={250}
-            animationDelay={1}
-            animationStagger={0.08}
-            easeType="elastic.out(1, 0.5)"
-            transformStyles={transformStyles}
-            enableHover={true}
-          />
+
+          <!-- Content 3 -->
+
+          <div class="flex flex-col items-center justify-center">
+            <Header class="my-10 text-(--text-color)" size="default"
+              >Kegiatan Himpunan</Header
+            >
+            <AutoplayImageCarousel
+              client:visible
+              imgList={imgs}
+              className="max-w-7xl"
+            />
+          </div>
+
+          <!-- Footer -->
+          <Footer />
         </div>
-
-        <!-- Content 2 -->
-        <div class="flex items-center justify-center">
-          <Paragraph
-            class="my-5 w-md text-justify text-(--text-color)/90 md:w-xl max-w-xl"
-          >
-            VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Quia impedit doloribus magnam, vitae enim soluta neque quasi labore
-            earum corporis itaque fugiat veritatis a, odit reprehenderit eveniet
-            minima molestiae nostrum!
-          </Paragraph>
-        </div>
-
-        <!-- Content 3 -->
-
-        <div class="my-30 flex flex-col items-center justify-center">
-          <Header class="my-10 text-(--text-color)" size="default"
-            >Kegiatan Himpunan</Header
-          >
-          <AutoplayImageCarousel
-            client:visible
-            imgList={imgs}
-            className="max-w-7xl"
-          />
-        </div>
-
-        <!-- Footer -->
-        <Footer />
       </div>
-    </div>
-  </main>
+    </main>
+  </PresenceOfMotion>
 </Layout>
