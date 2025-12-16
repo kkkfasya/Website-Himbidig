@@ -1,0 +1,20 @@
+# Image Conversion Failed:
+
+## convert
+
+magick: insufficient image data in file `/home/nekraut/Work/web-himpunan-himbidig/public/og-img.jpg' @ error/jpeg.c/ReadOneJPEGImage/1117.
+
+- **cwd**: ~/Work/web-himpunan-himbidig
+```sh
+magick \ 
+  /home/nekraut/Work/web-himpunan-himbidig/public/og-img.jpg[0] \ 
+  -scale 1920x1080> -write \ 
+  /home/nekraut/.cache/nvim/snacks/image/ca1ac3ba-og-img.png \ 
+  -identify -format \ 
+  '%m %[fx:w]x%[fx:h] %xx%y' \ 
+  /home/nekraut/.cache/nvim/snacks/image/ca1ac3ba-og-img.png.info
+```
+
+# Output
+magick: insufficient image data in file `/home/nekraut/Work/web-himpunan-himbidig/public/og-img.jpg' @ error/jpeg.c/ReadOneJPEGImage/1117.
+

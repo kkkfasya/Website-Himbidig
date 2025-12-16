@@ -25,6 +25,17 @@ export default defineConfig({
         cssVariable: "--font-ibm-plex-mono",
         fallbacks: ["Helvetica", "sans-serif"],
       },
+      {
+        name: "Akira Expanded",
+        cssVariable: "--font-akira",
+        provider: "local",
+        variants: [
+          {
+            src: ["./src/fonts/Akira-Expanded.woff2"],
+          },
+        ],
+        fallbacks: ["Helvetica", "sans-serif"],
+      },
     ],
   },
 });

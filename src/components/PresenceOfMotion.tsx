@@ -10,7 +10,7 @@ export default function PresenceOfMotion(
 ) {
   const defaultMotionConfig: HTMLMotionProps<"div"> = {
     initial: { filter: "blur(20px)", opacity: 0 },
-    transition: { ease: "easeInOut", duration: 0.5 },
+    transition: { ease: "easeInOut", duration: 1 },
     animate: { filter: "blur(0px)", opacity: 1 },
     exit: { filter: "blur(20px)", opacity: 0 },
   };

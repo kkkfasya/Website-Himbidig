@@ -1,11 +1,11 @@
 ---
-import logo from "@/assets/demo.png";
-const web_url = "";
+const web_url = ""; // TODO: masukin url web sendiri
 const web_creator_url = "https://kkkfasya.web.id"; // Masukin web aku di footer gapapa yaa
+const { logo, text} = Astro.props;
 ---
 
 <footer
-  class="bg-neutral-primary-soft rounded-base m-4 text-(--text-color) shadow-xs"
+  class="bg-neutral-primary-soft rounded-base m-4 text-(--text-color) underline shadow-xs"
 >
   <div class="mx-auto w-full max-w-7xl p-4 md:py-8">
     <div class="sm:flex sm:items-center sm:justify-between">
@@ -13,10 +13,11 @@ const web_creator_url = "https://kkkfasya.web.id"; // Masukin web aku di footer 
         href={web_url}
         class="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
       >
-        <img src={logo.src} class="h-7" alt="Himbidig Logo" />
+        <img src={logo} class="h-7" alt="Himbidig Logo" />
         <span
           class="text-heading self-center text-2xl font-semibold whitespace-nowrap"
-          >Himbidig Unmuha</span
+        >
+                    {text}</span
         >
       </a>
       <ul

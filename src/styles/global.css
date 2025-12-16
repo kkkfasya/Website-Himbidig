@@ -6,6 +6,7 @@
 @theme inline {
   --font-sans: var(--font-geist);
   --font-mono: var(--font-ibm-plex-mono);
+  --font-expanded: var(--font-akira);
 }
 
 :root {

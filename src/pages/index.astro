@@ -19,8 +19,9 @@ const transformStyles = [
 ];
 
 // TODO: favicon
-// TODO: font
 // TODO: color
+// TODO: content
+// TODO: button
 ---
 
 <Layout>
@@ -29,7 +30,7 @@ const transformStyles = [
       <div
         class="relative flex w-full items-center justify-center px-4 sm:px-8"
       >
-        <div class="absolute top-0 left-0 -z-10 h-full w-full blur-[2px]">
+        <div class="absolute top-0 left-0 -z-10 h-full w-full blur-[1px]">
           <Dithering
             client:load
             width="100%"
@@ -51,7 +52,9 @@ const transformStyles = [
             <Header class="text-7xl text-(--text-color)" size="large"
               >Himbidig</Header
             >
-            <Paragraph class="text-(--text-color)">slogan simpel </Paragraph>
+            <Paragraph class="text-(--text-color)"
+              >Lead the Digital Future</Paragraph
+            >
           </div>
 
           <!-- Content -->
@@ -68,26 +71,25 @@ const transformStyles = [
                 reprehenderit eveniet minima molestiae nostrum!
               </Paragraph>
             </div>
-                        <div class="mt-10 sm:mt-0">
-<BounceCards
-              client:load
-              images={imgs}
-              containerWidth={500}
-              containerHeight={250}
-              animationDelay={1}
-              animationStagger={0.08}
-              easeType="elastic.out(1, 0.5)"
-              transformStyles={transformStyles}
-              enableHover={true}
-            />
-                        </div>
-            
+            <div class="mt-10 sm:mt-0">
+              <BounceCards
+                client:load
+                images={imgs}
+                containerWidth={500}
+                containerHeight={250}
+                animationDelay={1}
+                animationStagger={0.08}
+                easeType="elastic.out(1, 0.5)"
+                transformStyles={transformStyles}
+                enableHover={true}
+              />
+            </div>
           </div>
 
           <!-- Content 2 -->
           <div class="flex items-center justify-center">
             <Paragraph
-              class=" w-md max-w-xl text-justify text-(--text-color) md:w-xl"
+              class="w-md max-w-xl text-justify text-(--text-color) md:w-xl"
             >
               VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing
               elit. Quia impedit doloribus magnam, vitae enim soluta neque quasi
@@ -110,7 +112,7 @@ const transformStyles = [
           </div>
 
           <!-- Footer -->
-          <Footer />
+        <Footer logo={DemoImg.src} text="Himbidig FE Unmuha"/>
         </div>
       </div>
     </main>

@@ -37,7 +37,7 @@ export default function AutoplayImageCarousel(props: {
             key={index}
             className="basis-1/1 md:basis-1/3 xl:basis-1/4"
           >
-            <Card className="overflow-hidden p-0 border-[3px] border-(--highlight-color)">
+            <Card className="overflow-hidden border-[3px] border-(--highlight-color) p-0">
               <CardContent className="p-0 md:aspect-square">
                 <img src={img} className="h-full w-full object-cover" />
               </CardContent>
@@ -45,8 +45,8 @@ export default function AutoplayImageCarousel(props: {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="rounded-none"/>
+      <CarouselNext className="rounded-none"/>
     </Carousel>
   );
 }
