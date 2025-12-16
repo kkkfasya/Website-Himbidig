@@ -45,8 +45,8 @@ export default function AutoplayImageCarousel(props: {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="rounded-none"/>
-      <CarouselNext className="rounded-none"/>
+      <CarouselPrevious className="rounded-none" />
+      <CarouselNext className="rounded-none" />
     </Carousel>
   );
 }
