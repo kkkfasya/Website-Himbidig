@@ -1,24 +1,25 @@
 ---
 const web_url = ""; // TODO: masukin url web sendiri
 const web_creator_url = "https://kkkfasya.web.id"; // Masukin web aku di footer gapapa yaa
-const { logo, text} = Astro.props;
+const { logo, text } = Astro.props;
 const links = [
-    {
-        name:"Instagram",
-        link:"https://www.instagram.com/himbidig.feunmuha",
-    },
+  {
+    name: "Instagram",
+    link: "https://www.instagram.com/himbidig.feunmuha",
+  },
 
-    {
-        name:"Email",
-        link:"mailto:himbidig@gmail.com",
-    },
+  {
+    name: "Email",
+    link: "mailto:himbidig@gmail.com",
+  },
 
-    {
-        name:"Whatsapp",
-        link:"https://wa.me/62895328008696",
-    },
-]
+  {
+    name: "Whatsapp",
+    link: "https://wa.me/62895328008696",
+  },
+];
 ---
+
 <!-- XXX: underline or no? -->
 <footer
   class="bg-neutral-primary-soft rounded-base m-4 text-(--text-color) underline shadow-xs"
@@ -31,29 +32,34 @@ const links = [
       >
         <img src={logo} class="h-7" alt="Himbidig Logo" />
         <span
-          class="text-heading self-center text-xl sm:text-2xl font-semibold whitespace-nowrap"
+          class="text-heading self-center text-xl font-semibold whitespace-nowrap sm:text-2xl"
         >
-                    {text}</span
+          {text}</span
         >
       </a>
       <ul
         class="text-body mb-6 flex flex-wrap items-center text-sm font-medium sm:mb-0"
-            >
-                {
-                links.map((l) => (
-                <li>
-                    <a href={l.link} class="me-4 hover:underline md:me-6" target="_blank"
-                    >{l.name}</a
-                    >
-                </li>
-                ))
-                }
+      >
+        {
+          links.map((l) => (
+            <li>
+              <a
+                href={l.link}
+                class="me-4 hover:underline md:me-6"
+                target="_blank"
+              >
+                {l.name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
     <hr class="border-default my-6 sm:mx-auto lg:my-8" />
     <span class="text-body block text-sm sm:text-center"
-      >© 2025 <a href={web_creator_url} class="hover:underline" target="_blank">Kamal Fasya</a>.
-      Made with Love.</span
+      >© 2025 <a href={web_creator_url} class="hover:underline" target="_blank"
+        >Kamal Fasya</a
+      >. Made with Love.</span
     >
   </div>
 </footer>
