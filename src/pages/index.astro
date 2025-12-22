@@ -1,15 +1,17 @@
 ---
+// TODO: favicon
+// TODO: fix corrupt image
+// TODO: add kegiatan himpunan image
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Paragraph from "@/components/Paragraph.astro";
 import Footer from "@/components/Footer.astro";
 import PresenceOfMotion from "@/components/PresenceOfMotion";
 import AutoplayImageCarousel from "@/components/AutoplayImageCarousel";
-import DemoImg from "@/assets/demo.png";
 import BounceCards from "@/components/BounceCards";
 import { Dithering } from "@paper-design/shaders-react";
-
-let imgs = Array.from({ length: 5 }).map(() => DemoImg.src);
+import { allImages } from "@/assets/index";
+let imgs = allImages.map((i) => i.src).reverse();
 const transformStyles = [
   "rotate(5deg) translate(-150px)",
   "rotate(0deg) translate(-70px)",
@@ -17,11 +19,6 @@ const transformStyles = [
   "rotate(5deg) translate(70px)",
   "rotate(-5deg) translate(150px)",
 ];
-
-// TODO: favicon
-// TODO: color
-// TODO: content
-// TODO: button
 ---
 
 <Layout>
@@ -112,7 +109,7 @@ const transformStyles = [
           </div>
 
           <!-- Footer -->
-          <Footer logo={DemoImg.src} text="Himbidig FE Unmuha" />
+        <Footer logo={imgs[1]} text="Himbidig FE Unmuha" />
         </div>
       </div>
     </main>

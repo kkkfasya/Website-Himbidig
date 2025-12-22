@@ -2,7 +2,7 @@
 
 ## convert
 
-magick: insufficient image data in file `/home/nekraut/Work/web-himpunan-himbidig/public/og-img.jpg' @ error/jpeg.c/ReadOneJPEGImage/1117.
+magick: Not a JPEG file: starts with 0x23 0x20 `/home/nekraut/Work/web-himpunan-himbidig/public/og-img.jpg' @ error/jpeg.c/JPEGErrorHandler/356.
 
 - **cwd**: ~/Work/web-himpunan-himbidig
 ```sh
@@ -16,5 +16,5 @@ magick \
 ```
 
 # Output
-magick: insufficient image data in file `/home/nekraut/Work/web-himpunan-himbidig/public/og-img.jpg' @ error/jpeg.c/ReadOneJPEGImage/1117.
+magick: Not a JPEG file: starts with 0x23 0x20 `/home/nekraut/Work/web-himpunan-himbidig/public/og-img.jpg' @ error/jpeg.c/JPEGErrorHandler/356.
 
