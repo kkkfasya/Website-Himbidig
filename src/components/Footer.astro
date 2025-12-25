@@ -1,5 +1,4 @@
 ---
-const web_url = ""; // TODO: masukin url web sendiri
 const web_creator_url = "https://kkkfasya.web.id"; // Masukin web aku di footer gapapa yaa
 const { logo, text } = Astro.props;
 const links = [
@@ -20,17 +19,16 @@ const links = [
 ];
 ---
 
-<!-- XXX: underline or no? -->
 <footer
   class="bg-neutral-primary-soft rounded-base m-4 text-(--text-color) underline shadow-xs"
 >
   <div class="mx-auto w-full max-w-7xl p-4 md:py-8">
     <div class="sm:flex sm:items-center sm:justify-between">
       <a
-        href={web_url}
         class="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
+        target="_self"
       >
-        <img src={logo} class="h-7" alt="Himbidig Logo" />
+        <img src={logo} class="h-10" alt="Himbidig Logo" />
         <span
           class="text-heading self-center text-xl font-semibold whitespace-nowrap sm:text-2xl"
         >
@@ -57,8 +55,10 @@ const links = [
     </div>
     <hr class="border-default my-6 sm:mx-auto lg:my-8" />
     <span class="text-body block text-sm sm:text-center"
-      >© 2025 <a href={web_creator_url} class="hover:underline" target="_blank"
-        >Kamal Fasya</a
+      >© 2025 <a
+        href={web_creator_url}
+        class="transition-all duration-300 ease-in-out hover:tracking-widest hover:underline"
+        target="_blank">Kamal Fasya</a
       >. Made with Love.</span
     >
   </div>
