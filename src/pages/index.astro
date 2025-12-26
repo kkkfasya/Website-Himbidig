@@ -13,6 +13,14 @@ import { logo } from "@/assets/index";
 
 let anggotaImgs = anggotaAll.map((i) => i.src).reverse();
 let kegiatanImgs = kegiatanAll.map((i) => i.src);
+let txtVisi = `
+Mewujudkan Himpunan Mahasiswa yang inklusif, progresif, dan berdaya guna sebagai wadah pengembangan potensi, solidaritas, dan kontribusi nyata bagi kampus dan masyarakat.
+`;
+let txtMisi = `
+Membentuk potensi mahasiswa program studi bisnis digital fakultas ekonomi universitas Muhammadiyah aceh 
+Mengubah pola pikir mahasiswa ke arah teknologi yang lebih baik dan kritis
+Mengatasi terbatasnya kemandirian dan kemampuan pribadi untuk mencapai tujuan bersama
+`;
 
 const transformStyles = [
   "rotate(5deg) translate(-150px)",
@@ -86,17 +94,18 @@ const transformStyles = [
           <!-- Content 2 -->
           <div class="flex items-center justify-center">
             <Paragraph
-              class="w-md max-w-xl text-justify text-(--text-color) md:w-xl"
+              class="w-md max-w-2xl text-justify tracking-widest text-(--text-color) md:w-2xl"
             >
-              VISI MISI: Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Quia impedit doloribus magnam, vitae enim soluta neque quasi
-              labore earum corporis itaque fugiat veritatis a, odit
-              reprehenderit eveniet minima molestiae nostrum!
+              Visi: <br />
+              {txtVisi}
+              <br />
+              <br />
+              Misi: <br />
+              {txtMisi}
             </Paragraph>
           </div>
 
           <!-- Content 3 -->
-
           <div class="flex flex-col items-center justify-center">
             <Header class="my-10 text-2xl text-(--text-color)" size="default"
               >Kegiatan Himpunan</Header

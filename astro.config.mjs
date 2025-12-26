@@ -14,18 +14,6 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: fontProviders.google(),
-        name: "Geist",
-        cssVariable: "--font-geist",
-        fallbacks: ["Helvetica", "sans-serif"],
-      },
-      {
-        provider: fontProviders.google(),
-        name: "IBM Plex Mono",
-        cssVariable: "--font-ibm-plex-mono",
-        fallbacks: ["Helvetica", "sans-serif"],
-      },
-      {
         name: "Akira Expanded",
         cssVariable: "--font-akira",
         provider: "local",

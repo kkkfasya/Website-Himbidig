@@ -4,9 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-ibm-plex-mono);
   --font-expanded: var(--font-akira);
+}
+.debug {
+  @apply border border-4 border-red-500;
 }
 
 :root {
