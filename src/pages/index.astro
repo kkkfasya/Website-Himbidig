@@ -5,10 +5,12 @@ import Paragraph from "@/components/Paragraph.astro";
 import Footer from "@/components/Footer.astro";
 import PresenceOfMotion from "@/components/PresenceOfMotion";
 import AutoplayImageCarousel from "@/components/AutoplayImageCarousel";
-import BounceCards from "@/components/BounceCards";
+import ResponsiveBounceCards from "@/components/ResponsiveBounceCards";
 import { Dithering } from "@paper-design/shaders-react";
 import { anggotaAll, kegiatanAll } from "@/assets/index";
 import { logo } from "@/assets/index";
+
+console.log();
 
 let anggotaImgs = anggotaAll.map((i) => i.src).reverse();
 let kegiatanImgs = kegiatanAll.map((i) => i.src);
@@ -55,7 +57,7 @@ const transformStyles = [
         >
           <!-- Header -->
           <div class="flex w-full flex-col md:w-1/2 xl:w-2/5">
-            <Header class="text-7xl text-(--text-color)" size="large"
+            <Header class="text-6xl text-(--text-color)" size="large"
               >Himbidig</Header
             >
             <Paragraph class="text-(--text-color)"
@@ -75,8 +77,8 @@ const transformStyles = [
                 periode 2025/2026
               </Paragraph>
             </div>
-            <div class="mt-20 sm:ml-20 md:mr-0 md:ml-0 xl:mr-50">
-              <BounceCards
+            <div class="mt-20 flex w-full flex-col items-center justify-center">
+              <ResponsiveBounceCards
                 client:load
                 images={anggotaImgs}
                 containerWidth={500}
@@ -123,3 +125,5 @@ const transformStyles = [
     </main>
   </PresenceOfMotion>
 </Layout>
+
+<script></script>

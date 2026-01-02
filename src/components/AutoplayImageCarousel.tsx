@@ -27,7 +27,7 @@ export default function AutoplayImageCarousel(props: {
         WheelGesturesPlugin({ forceWheelAxis: "x" }),
       ]}
       className={cn(
-        "w-[20rem] md:w-[50rem] xl:w-[70rem] 2xl:w-7xl",
+        "w-[17rem] md:w-[50rem] xl:w-[70rem] 2xl:w-7xl",
         props.className,
       )}
     >

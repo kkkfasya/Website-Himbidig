@@ -1,12 +1,12 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-
 import react from "@astrojs/react";
+import { SITE, BASE } from "./siteConfig.ts";
 
 export default defineConfig({
-  site: "https://kkkfasya.github.io",
-  base: "/Website-Himbidig",
+  site: SITE,
+  base: BASE,
   vite: {
     plugins: [tailwindcss()],
   },
