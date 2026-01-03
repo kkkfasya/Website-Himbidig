@@ -9,8 +9,9 @@ export default function ResponsiveBounceCards(props: BounceCardsProps) {
   const splitIndex = Math.ceil(img?.length! / 2);
   const mobileImages1 = img?.slice(0, splitIndex);
   const mobileImages2 = img?.slice(splitIndex);
+
   return (
-    <div className="debug flex w-full flex-col items-center justify-center">
+    <div className="flex w-full flex-col items-center justify-center">
       {isMobile ? (
         <>
           <div className="mx-auto">
