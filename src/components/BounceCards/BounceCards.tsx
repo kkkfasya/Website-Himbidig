@@ -61,10 +61,7 @@ export default function BounceCards({
     }
   };
 
-  const getPushedTransform = (
-    baseTransform: string,
-    offsetX: number,
-  ): string => {
+  const getPushedTransform = (baseTransform: string, offsetX: number): string => {
     const translateRegex = /translate\(([-0-9.]+)px\)/;
     const match = baseTransform.match(translateRegex);
     if (match) {

@@ -28,15 +28,15 @@ const links = [
         class="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
         target="_self"
       >
-        <img src={logo} class="h-10" alt="Himbidig Logo" />
+        <img src={logo} class="h-7 sm:h-10" alt="Himbidig Logo" />
         <span
-          class="text-heading self-center text-lg font-semibold whitespace-nowrap sm:text-2xl"
+          class="text-heading self-center text-md font-semibold whitespace-nowrap sm:text-2xl"
         >
           {text}</span
         >
       </a>
       <ul
-        class="text-body mb-6 flex flex-col text-sm font-medium sm:mb-0 sm:flex-row sm:flex-wrap sm:items-center"
+        class="text-body mb-6 flex text-xs sm:mb-0 sm:flex-row sm:flex-wrap sm:items-center sm:text-lg"
       >
         {
           links.map((l) => (
@@ -54,14 +54,14 @@ const links = [
       </ul>
     </div>
     <hr class="border-default my-6 sm:mx-auto lg:my-8" />
-    <span class="text-body block text-sm sm:text-center"
+    <span class="text-body block text-xs sm:text-center sm:text-sm"
       ><a
         ©
         2025
         href={web_creator_url}
         class="transition-all duration-300 ease-in-out hover:tracking-widest hover:underline"
         target="_blank"
-        >&copy Kamal Fasya. <br /> Made with Love.
+        >&copy 2025 Kamal Fasya. <br /> Made with Love.
       </a></span
     >
   </div>

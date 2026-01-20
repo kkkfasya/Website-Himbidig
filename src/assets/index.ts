@@ -14,13 +14,7 @@ import logo from "./logo.webp";
 
 const kegiatanAll = [kegiatan1, kegiatan2, kegiatan3, kegiatan4, kegiatan5];
 
-const anggotaAll = [
-  anggotaLengkap,
-  anggotaBph,
-  anggotaInovasi,
-  anggotaMedia,
-  anggotaMinat,
-];
+const anggotaAll = [anggotaLengkap, anggotaBph, anggotaInovasi, anggotaMedia, anggotaMinat];
 
 const allImages = [...anggotaAll, ...kegiatanAll];
 

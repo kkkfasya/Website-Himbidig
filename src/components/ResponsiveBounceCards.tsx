@@ -1,6 +1,4 @@
-import BounceCards, {
-  type BounceCardsProps,
-} from "@/components/BounceCards/BounceCards";
+import BounceCards, { type BounceCardsProps } from "@/components/BounceCards/BounceCards";
 import useIsMobile from "@/hooks/useIsMobile";
 
 export default function ResponsiveBounceCards(props: BounceCardsProps) {
