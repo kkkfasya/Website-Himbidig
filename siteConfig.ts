@@ -1,2 +1,2 @@
-export const SITE = "https://kkkfasya.github.io";
+export const SITE = "https://himbidig.web.id";
 export const BASE = "/Website-Himbidig";
